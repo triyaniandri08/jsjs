@@ -41,7 +41,6 @@ $link =  $span->getElementsByTagName('strong');
 
      ?>
  document.getElementsByName("blog_title")[0].value = "<?php echo $link->item(0)->nodeValue; ?>" ;
- document.getElementsByName("var-2")[0].value = "<?php echo $link->item(2)->nodeValue; ?>" ;
  document.getElementsByName("var-3")[0].value = "<?php if (preg_match("/MB/i", $link->item(5)->nodeValue)) {
     echo $link->item(5)->nodeValue;
 } else {
