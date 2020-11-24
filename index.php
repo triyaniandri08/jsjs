@@ -75,5 +75,7 @@ $spaner = $finder->query("//*[contains(@class, '$classname')]");
 //mengambil data dari class yang pertama
 $span = $spaner->item(0);
 //dari class pertama mengambil 2 elemen yaitu a yang menyimpan judul dan link dan span yang menyimpan tanggal
-$link =  $span->getElementsByTagName('iframe');                                            ?>
+$link =  $span->getElementsByTagName('iframe');
+$linkk =  $span->getElementsByTagName('a');                                            ?>
 document.getElementsByName("var-1")[0].value = "<?php echo $link->item(0)->getAttribute('src'); ?>" ;
+document.getElementsByName("var-2")[0].value = "<?php echo $linkk->item(0)->getAttribute('href'); ?>" ;
