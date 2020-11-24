@@ -41,7 +41,6 @@ $link =  $span->getElementsByTagName('strong');
 
      ?>
  document.getElementsByName("blog_title")[0].value = "<?php echo $link->item(0)->nodeValue; ?>" ;
- document.getElementsByName("var-2")[0].value = "<?php echo $link->item(2)->nodeValue; ?>" ;
  document.getElementsByName("var-3")[0].value = "<?php if (preg_match("/MB/i", $link->item(5)->nodeValue)) {
     echo $link->item(5)->nodeValue;
 } else {
@@ -75,5 +74,7 @@ $spaner = $finder->query("//*[contains(@class, '$classname')]");
 //mengambil data dari class yang pertama
 $span = $spaner->item(0);
 //dari class pertama mengambil 2 elemen yaitu a yang menyimpan judul dan link dan span yang menyimpan tanggal
-$link =  $span->getElementsByTagName('iframe');                                            ?>
+$link =  $span->getElementsByTagName('iframe');
+$linkk =  $span->getElementsByTagName('a');                                            ?>
 document.getElementsByName("var-1")[0].value = "<?php echo $link->item(0)->getAttribute('src'); ?>" ;
+document.getElementsByName("var-2")[0].value = "<?php echo $linkk->item(0)->getAttribute('href'); ?>" ;
