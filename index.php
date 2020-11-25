@@ -40,7 +40,6 @@ $span = $spaner->item(0);
 //dari class pertama mengambil 2 elemen yaitu a yang menyimpan judul dan link dan span yang menyimpan tanggal
 $linkkk =  $span->getElementsByTagName('iframe');
 $linkk =  $span->getElementsByTagName('a');                                            ?>
- ?>
 document.getElementsByName("var-1")[0].value = "<?php echo $linkkk->item(0)->getAttribute('src'); ?>" ;
 document.getElementsByName("var-2")[0].value = "<?php echo $linkk->item(0)->getAttribute('href'); ?>" ;
 
@@ -71,9 +70,9 @@ $link =  $span->getElementsByTagName('strong');
      ?>
  document.getElementsByName("blog_title")[0].value = "<?php echo $link->item(1)->nodeValue; ?> - <?php echo $link->item(0)->nodeValue; ?> ~<?php echo $linkkk->item(0)->getAttribute('src'); ?>~" ;
  document.getElementsByName("blog_cat")[0].value = "<?php if (preg_match("/Download/i", $link->item(4)->nodeValue)) {
-    echo $link->item(4)->nodeValue;
+    echo str_replace("Download Lagu ", "", $link->item(4)->nodeValue);
 } else {
-    echo $link->item(3)->nodeValue;
+    echo str_replace("Download Lagu ", "", $link->item(3)->nodeValue);
 }
 ?>" ;
 document.getElementsByName("var-3")[0].value = "<?php if (preg_match("/MB/i", $link->item(5)->nodeValue)) {
